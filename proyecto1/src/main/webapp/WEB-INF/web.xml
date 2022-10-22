@@ -29,4 +29,14 @@
     <servlet-name>UsuariosController</servlet-name>
     <url-pattern>/UsuariosController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PilotosController</display-name>
+    <servlet-name>PilotosController</servlet-name>
+    <servlet-class>nombredominio.controllers.PilotosController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PilotosController</servlet-name>
+    <url-pattern>/PilotosController</url-pattern>
+  </servlet-mapping>
 </web-app>

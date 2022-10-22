@@ -21,7 +21,7 @@
         	<input type="email" name="email">
         	<br>
         	<p>Password:</p>
-        	<input type="password" name="pass">
+        	<input type="password" name="password">
         	<br>
         	
         	<button type="submit">Enviar</button>

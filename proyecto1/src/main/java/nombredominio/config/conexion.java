@@ -10,15 +10,12 @@ public class conexion {
 	public conexion () {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conection = DriverManager.getConnection("jdbc:mysql://localhost:3306/proyecto2daw", "root", "");
+			conection = DriverManager.getConnection("jdbc:mysql://localhost:3306/parrilla", "root", "");
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-	
-	
-	
+	}	
 	
 	public Connection desconectar () {
 		conection = null;

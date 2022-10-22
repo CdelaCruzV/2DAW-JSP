@@ -10,6 +10,7 @@
 <body>
 <h1>Hola</h1>
 	<a href="UsuariosController?action=index">Usuarios index</a><br>
+	<a href="PilotosController?action=index">Pilotos index</a><br>
 
 </body>
 </html>

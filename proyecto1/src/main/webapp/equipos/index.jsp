@@ -1,7 +1,7 @@
 	<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 		pageEncoding="ISO-8859-1"%>
-	<%@ page import="nombredominio.modelsDAO.PilotosDAO"%>
-	<%@ page import="nombredominio.models.Pilotos"%>
+	<%@ page import="nombredominio.modelsDAO.EquiposDAO"%>
+	<%@ page import="nombredominio.models.Equipos"%>
 	<%@ include file="../login-validation.jsp"%>
 	<%@ page import="java.util.ArrayList"%>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="daw"%>
@@ -12,8 +12,8 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
-	<h1>Lista de Pilotos</h1>
-		<a href="PilotosController?action=create">Añade un piloto</a>
+	<h1>USUARIOS INDEX</h1>
+		<a href="EquiposController?action=create">Añade un equipo</a>
 		<table>
 			<div class="row">
 		        <div class="col-lg-4"></div>
@@ -23,10 +23,10 @@
 			                    <tr>
 			                        <th scope="col">#</th>
 			                        <th scope="col">Nombre</th>
-			                        <th scope="col">Apellidos</th>
-			                        <th scope="col">Nacionalidad</th>
-			                        <th scope="col">Edad</th>
-			                        <th scope="col">Equipo</th>
+			                        <th scope="col">Año</th>
+			                        <th scope="col">Victorias</th>
+			                        <th scope="col">Podios</th>
+			                        <th scope="col">Puntos</th>
 			                        <th scope="col"></th>
 			                    </tr>
 			                </thead>
@@ -49,29 +49,29 @@
 			                    </tr>
 			                    <%} %>
 			                     --%>
-			                    <daw:forEach var="piloto" items="${usu}">
+			                    <daw:forEach var="equipo" items="${usu}">
 			                    	<tr>
-			                        <td>${piloto.id}</td>
-			                        <td>${piloto.nombre}</td>
-			                        <td>${piloto.apellidos}</td>
-			                        <td>${piloto.nacionalidad}</td>
-			                        <td>${piloto.edad}</td>
-			                        <td>${piloto.equipo}</td>
+			                        <td>${equipo.id}</td>
+			                        <td>${equipo.nombre}</td>
+			                        <td>${equipo.ano}</td>
+			                        <td>${equipo.victorias}</td>
+			                        <td>${equipo.podios}</td>
+			                        <td>${equipo.puntos}</td>
 			                        <td>
-				                        <a href="PilotosController?action=edit&id=${piloto.id}">Edit</a>
-				                        <a href="PilotosController?action=delete&id=${piloto.id}">Delete</a>
+				                        <a href="EquiposController?action=edit&id=${equipo.id}">Edit</a>
+				                        <a href="EquiposController?action=delete&id=${equipo.id}">Delete</a>
 			                        </td>
 			                    </tr>
 			                    </daw:forEach>
 			                    
 			                    <daw:choose>
 			                    
-			                    <daw:when test="${piloto.id == 5}">		
-			                    	<h1>HOLA ${piloto.nombre}</h1>	                    
+			                    <daw:when test="${equipo.id == 5}">		
+			                    	<h1>HOLA ${equipo.nombre}</h1>	                    
 			                    </daw:when>
 			                    
-			                    <daw:when test="${piloto.id == 6}">		
-			                    	<h1>HOLA ${piloto.nombre}</h1>	                    
+			                    <daw:when test="${equipo.id == 6}">		
+			                    	<h1>HOLA ${equipo.nombre}</h1>	                    
 			                    </daw:when>
 			                    
 			                    <daw:otherwise>

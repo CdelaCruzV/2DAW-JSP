@@ -39,4 +39,24 @@
     <servlet-name>PilotosController</servlet-name>
     <url-pattern>/PilotosController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EquiposController</display-name>
+    <servlet-name>EquiposController</servlet-name>
+    <servlet-class>nombredominio.controllers.EquiposController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EquiposController</servlet-name>
+    <url-pattern>/EquiposController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CircuitosController</display-name>
+    <servlet-name>CircuitosController</servlet-name>
+    <servlet-class>nombredominio.controllers.CircuitosController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CircuitosController</servlet-name>
+    <url-pattern>/CircuitosController</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -13,7 +13,7 @@
 	<h1>Edita un Piloto</h1>
 		<%
 			PilotosDAO pilotoDAO = new PilotosDAO();
-			int id = Integer.parseInt(request.getAttribute("id_usuario").toString());
+			int id = Integer.parseInt(request.getAttribute("id_pilotoss").toString());
 			Pilotos piloto = new Pilotos();
 			piloto = pilotoDAO.find(id);
 		%>
@@ -25,16 +25,16 @@
         	<input type="text" name="nombre" value="<%= piloto.getNombre() %>">
         	<br>
         	<p>Apellidos:</p>
-        	<input type="text" name="apellidos" value="<%= piloto.getNombre() %>">
+        	<input type="text" name="apellidos" value="<%= piloto.getApellidos() %>">
         	<br>
         	<p>Nacionalidad:</p>
-        	<input type="text" name="nacionalidad" value="<%= piloto.getNombre() %>">
+        	<input type="text" name="nacionalidad" value="<%= piloto.getNacionalidad() %>">
         	<br>
         	<p>Edad:</p>
-        	<input type="text" name="edad" value="<%= piloto.getNombre() %>">
+        	<input type="text" name="edad" value="<%= piloto.getEdad() %>">
         	<br>
         	<p>Equipo:</p>
-        	<input type="text" name="equipo" value="<%= piloto.getNombre() %>">
+        	<input type="text" name="equipo" value="<%= piloto.getEquipo() %>">
         	<br>
         	
         	<button type="submit">Actualizar</button>

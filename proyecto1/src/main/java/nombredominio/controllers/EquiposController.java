@@ -6,8 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import nombredominio.models.Pilotos;
-import nombredominio.modelsDAO.PilotosDAO;
+import nombredominio.models.Equipos;
+import nombredominio.modelsDAO.EquiposDAO;
 
 import java.io.IOException;
 import java.math.BigInteger;
@@ -15,26 +15,26 @@ import java.security.MessageDigest;
 import java.util.ArrayList;
 
 /**
- * Servlet implementation class UsuariosController
+ * Servlet implementation class EquiposController
  */
-public class PilotosController extends HttpServlet {
+public class EquiposController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	String acceso; // Variable que distingue entre las vistas a las que tengo que redireccionar
 	String action; // Variable que recibo por URL y que me enlaza con el metodo/vista
 					// correspondiente
 
-	Pilotos piloto;
-	PilotosDAO pilotoDAO = new PilotosDAO();
+	Equipos equipo;
+	EquiposDAO equipoDAO = new EquiposDAO();
 
-	String nombre, apellidos, nacionalidad, equipo;
-	int edad;
+	String nombre;
+	int edad, ano, victorias, podios, puntos;
 
-	String index = "pilotos/index.jsp";
-	String create = "pilotos/create.jsp";
-	String edit = "pilotos/edit.jsp";
+	String index = "equipos/index.jsp";
+	String create = "equipos/create.jsp";
+	String edit = "equipos/edit.jsp";
 
-	ArrayList<Pilotos> pilotos;
+	ArrayList<Equipos> equipos;
 
 	int id;
 
@@ -49,8 +49,8 @@ public class PilotosController extends HttpServlet {
 
 		switch (action) {
 		case "index":
-			pilotos = pilotoDAO.all();
-			request.setAttribute("usu", pilotos);
+			equipos = equipoDAO.all();
+			request.setAttribute("usu", equipos);
 			acceso = index;
 			break;
 
@@ -63,16 +63,16 @@ public class PilotosController extends HttpServlet {
 			id = Integer.parseInt(request.getParameter("id"));
 
 			// Envio ID recogido por URL
-			request.setAttribute("id_pilotos", id);
+			request.setAttribute("id_usuario", id);
 
-			request.setAttribute("usu", pilotoDAO.find(id));
+			request.setAttribute("usu", equipoDAO.find(id));
 
 			acceso = edit;
 			break;
 
 		case "delete":
 			id = Integer.parseInt(request.getParameter("id"));
-			pilotoDAO.delete(id);
+			equipoDAO.delete(id);
 
 			acceso = index;
 			break;
@@ -99,19 +99,19 @@ public class PilotosController extends HttpServlet {
 		switch (action) {
 		case "create":
 			nombre = request.getParameter("nombre");
-			apellidos = request.getParameter("apellidos");
-			nacionalidad = request.getParameter("nacionalidad");
-			edad = Integer.parseInt(request.getParameter("edad"));
-			equipo = request.getParameter("equipo");
+			ano = Integer.parseInt(request.getParameter("ano"));
+			victorias = Integer.parseInt(request.getParameter("victorias"));
+			podios = Integer.parseInt(request.getParameter("podios"));
+			puntos = Integer.parseInt(request.getParameter("puntos"));
 
-			piloto = new Pilotos();
-			piloto.setNombre(nombre);
-			piloto.setApellidos(apellidos);
-			piloto.setNacionalidad(nacionalidad);
-			piloto.setEdad(edad);
-			piloto.setEquipo(equipo);
+			equipo = new Equipos();
+			equipo.setNombre(nombre);
+			equipo.setAno(ano);
+			equipo.setVictorias(victorias);
+			equipo.setPodios(podios);
+			equipo.setPuntos(puntos);
 
-			pilotoDAO.save(piloto);
+			equipoDAO.save(equipo);
 			acceso = index;
 
 			break;
@@ -119,20 +119,20 @@ public class PilotosController extends HttpServlet {
 		case "update":
 			id = Integer.parseInt(request.getParameter("id"));
 			nombre = request.getParameter("nombre");
-			apellidos = request.getParameter("apellidos");
-			nacionalidad = request.getParameter("nacionalidad");
-			edad = Integer.parseInt(request.getParameter("edad"));
-			equipo = request.getParameter("equipo");
+			ano = Integer.parseInt(request.getParameter("ano"));
+			victorias = Integer.parseInt(request.getParameter("victorias"));
+			podios = Integer.parseInt(request.getParameter("podios"));
+			puntos = Integer.parseInt(request.getParameter("puntos"));
 
-			piloto = new Pilotos();
-			piloto.setId(id);
-			piloto.setNombre(nombre);
-			piloto.setApellidos(apellidos);
-			piloto.setNacionalidad(nacionalidad);
-			piloto.setEdad(edad);
-			piloto.setEquipo(equipo);
+			equipo = new Equipos();
+			equipo.setId(id);
+			equipo.setNombre(nombre);
+			equipo.setAno(ano);
+			equipo.setVictorias(victorias);
+			equipo.setPodios(podios);
+			equipo.setPuntos(puntos);
 
-			pilotoDAO.update(piloto);
+			equipoDAO.update(equipo);
 
 			acceso = index;
 			break;

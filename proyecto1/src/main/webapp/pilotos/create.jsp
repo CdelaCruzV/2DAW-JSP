@@ -8,29 +8,35 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>Añadir Pilotos</title>
-	</head>
-	<body>
-	<h1>Añade un Piloto</h1>
+		<link href="./resources/css/styleform.css" type="text/css"
+	rel="stylesheet">
+</head>
+<body style="background-image: url(./resources/img/f1e.jpg);">
+	<p class="texto">Añadir Pilotos</p>
+	<div class="Login">
 		<form method="POST" action="PilotosController?action=create">
-        	
-        	<input type="hidden" name="id">
-        	<p>Nombre:</p>
-        	<input type="text" name="nombre">
-        	<br>
-        	<p>Apellidos:</p>
-        	<input type="text" name="apellidos">
-        	<br>
-        	<p>Nacionalidad:</p>
-        	<input type="text" name="nacionalidad">
-        	<br>
-        	<p>Edad:</p>
-        	<input type="text" name="edad">
-        	<br>
-        	<p>Equipo:</p>
-        	<input type="text" name="equipo">
-        	<br>
-        	
-        	<button type="submit">Enviar</button>
-        </form>
+
+			<span class="fontawesome-envelope-alt"></span><input type="hidden"
+				name="id"  placeholder="id"> 
+				
+				<span
+				class="fontawesome-lock"></span><input type="text" name="nombre" placeholder="Nombre"> 
+				
+				<span
+				class="fontawesome-lock"></span><input type="text" name="apellidos" placeholder="Apellidos"> 
+				
+				<span
+				class="fontawesome-lock"></span><input type="text" name="nacionalidad" placeholder="Nacionalidad"> 
+				
+				<span
+				class="fontawesome-lock"></span><input type="text" name="edad" placeholder="Edad"> 
+				
+				<span
+				class="fontawesome-lock"></span><input type="text" name="equipo" placeholder="Equipo"> 
+				
+				<input
+				type="submit" value="Añadir" title="Añadir Pilotos"> <br>
+				</form>
+	</div>
 	</body>
 </html>

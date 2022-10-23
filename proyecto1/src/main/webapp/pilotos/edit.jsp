@@ -8,36 +8,43 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>Editar un Piloto</title>
+		<link href="./resources/css/styleform.css" type="text/css"
+	rel="stylesheet">
 	</head>
-	<body>
-	<h1>Edita un Piloto</h1>
+	<body style="background-image: url(./resources/img/f1e.jpg);">
 		<%
 			PilotosDAO pilotoDAO = new PilotosDAO();
-			int id = Integer.parseInt(request.getAttribute("id_pilotoss").toString());
+			int id = Integer.parseInt(request.getAttribute("id_pilotos").toString());
 			Pilotos piloto = new Pilotos();
 			piloto = pilotoDAO.find(id);
 		%>
+		<p class="texto">Edita un Piloto</p>
+		<div class="Login">
+		<form method="POST" action="PilotosController?action=update">
 
-        <form method="POST" action="PilotosController?action=update">
-        	
-        	<input type="hidden" name="id" value="<%= piloto.getId() %>">
-        	<p>Nombre:</p>
-        	<input type="text" name="nombre" value="<%= piloto.getNombre() %>">
-        	<br>
-        	<p>Apellidos:</p>
-        	<input type="text" name="apellidos" value="<%= piloto.getApellidos() %>">
-        	<br>
-        	<p>Nacionalidad:</p>
-        	<input type="text" name="nacionalidad" value="<%= piloto.getNacionalidad() %>">
-        	<br>
-        	<p>Edad:</p>
-        	<input type="text" name="edad" value="<%= piloto.getEdad() %>">
-        	<br>
-        	<p>Equipo:</p>
-        	<input type="text" name="equipo" value="<%= piloto.getEquipo() %>">
-        	<br>
-        	
-        	<button type="submit">Actualizar</button>
-        </form>
+			<span class="fontawesome-envelope"></span><input type="text"
+				name="id"  placeholder="id" value="<%= piloto.getId() %>" readonly> 
+				
+				<span
+				class="fontawesome-lock"></span><input type="text" value="<%= piloto.getNombre() %>" name="nombre" placeholder="Nombre" > 
+				
+				<span
+				class="fontawesome-lock"></span><input type="text" value="<%= piloto.getApellidos() %>" name="apellidos" placeholder="Apellidos"> 
+				
+				<span
+				class="fontawesome-lock"></span><input type="text" value="<%= piloto.getNacionalidad() %>" name="nacionalidad" placeholder="Nacionalidad"> 
+				
+				<span
+				class="fontawesome-lock"></span><input type="text" value="<%= piloto.getEdad() %>" name="edad" placeholder="Edad"> 
+				
+				<span
+				class="fontawesome-lock"></span><input type="text" value="<%= piloto.getEquipo() %>" name="equipo" placeholder="Equipo"> 
+				
+				<input
+				type="submit" value="Editar" title="Editar Piloto"> <br>
+				</form>
+		</div>
+
+        
 	</body>
 </html>

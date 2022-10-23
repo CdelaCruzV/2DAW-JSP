@@ -8,29 +8,34 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>Añadir Equipos</title>
-	</head>
-	<body>
-	<h1>Añade un Equipo</h1>
+		<link href="./resources/css/styleform.css" type="text/css"
+	rel="stylesheet">
+</head>
+<body style="background-image: url(./resources/img/f1e.jpg);">
+	<p class="texto">Añadir Equipos</p>
+	<div class="Login">
 		<form method="POST" action="EquiposController?action=create">
-        	
-        	<input type="hidden" name="id">
-        	<p>Nombre:</p>
-        	<input type="text" name="nombre">
-        	<br>
-        	<p>Año:</p>
-        	<input type="text" name="ano">
-        	<br>
-        	<p>Victorias:</p>
-        	<input type="text" name="victorias">
-        	<br>
-        	<p>Podios:</p>
-        	<input type="text" name="podios">
-        	<br>
-        	<p>Puntos:</p>
-        	<input type="text" name="puntos">
-        	<br>
-        	
-        	<button type="submit">Enviar</button>
-        </form>
+
+			<span class="fontawesome-envelope-alt"></span><input type="hidden"
+				name="id" placeholder="id"> 
+				
+				<span
+				class="fontawesome-lock"></span><input type="text" name="nombre" placeholder="Nombre"> 
+				
+				<span
+				class="fontawesome-lock"></span><input type="text" name="ano" placeholder="Año"> 
+				
+				<span
+				class="fontawesome-lock"></span><input type="text" name="victorias" placeholder="Victorias"> 
+				
+				<span
+				class="fontawesome-lock"></span><input type="text" name="podios" placeholder="Podios"> 
+				
+				<span
+				class="fontawesome-lock"></span><input type="text" name="puntos" placeholder="Puntos"> 
+				
+				<input
+				type="submit" value="Añadir" title="Añadir Equipos"> <br>
+	</div>
 	</body>
 </html>

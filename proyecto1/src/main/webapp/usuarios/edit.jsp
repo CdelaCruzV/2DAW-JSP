@@ -8,8 +8,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>USUARIOS | EDIT </title>
+		<link href="./resources/css/styleform.css" type="text/css"
+	rel="stylesheet">
 	</head>
-	<body>
+	<body style="background-image: url(./resources/img/f1e.jpg);">
 		<h1>USUARIOS EDIT</h1>
 		<%
 			UsuarioDAO usuarioDAO = new UsuarioDAO();
@@ -17,19 +19,29 @@
 			Usuario usuario = new Usuario();
 			usuario = usuarioDAO.find(id);
 		%>
+	
+	<p class="texto">Edita un Usuario</p>
+		<div class="Login">
+		<form method="POST" action="UsuariosController?action=update">
 
-        <form method="POST" action="UsuariosController?action=update">
-        	
-        	<input type="hidden" name="id" value="<%= usuario.getId() %>">
-        	<p>Nombre:</p>
-        	<input type="text" name="nombre" value="<%= usuario.getNombre() %>">
-        	<br>
-        	<p>Email:</p>
-        	<input type="email" name="email" value="<%= usuario.getEmail() %>">
-        	<br>
-        	
-        	<button type="submit">Actualizar</button>
-        </form>
+			<span class="fontawesome-envelope"></span><input type="text"
+				name="id"  placeholder="id" value="<%= usuario.getId() %>" readonly> 
+				
+				<span
+				class="fontawesome-lock"></span><input type="text" value="<%= usuario.getNombre() %>" name="nombre" placeholder="Nombre" > 
+				
+				<span
+				class="fontawesome-lock"></span><input type="email" value="<%= usuario.getEmail() %>" name="email" placeholder="Correo"> 
+				
+				<span
+				class="fontawesome-lock"></span><input type="password" value="<%= usuario.getPassword() %>" name="password" placeholder="contraseña"> 
+				
+				type="submit" value="Editar" title="Editar Piloto"> <br>
+				</form>
+		</div>
+
+        
+        
 
 	</body>
 </html>

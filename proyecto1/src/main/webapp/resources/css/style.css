@@ -119,6 +119,26 @@ table {
 	}
 }
 
+@media screen and (max-width: 940px) and (min-width: 768px){
+	#contenedor {
+		grid-template-areas: "header header header header"
+			"contenido1 contenido1 contenido1 contenido1"
+			"contenido1 contenido1 contenido1 contenido1"
+			"contenido2 contenido2 contenido2 contenido2" 
+			"pie pie pie pie";
+	}
+}
+
+@media screen and (min-width: 941px) {
+	#contenedor {
+		grid-template-areas: "header header header header"
+			"contenido1 contenido1 contenido1 contenido1"
+			"contenido1 contenido1 contenido1 contenido1"
+			"contenido2 contenido2 contenido2 contenido2" 
+			"pie pie pie pie";
+	}
+}
+
 body {
 	font-family: "Open Sans", sans-serif;
 	line-height: 1.25;
@@ -156,37 +176,4 @@ table th {
 	font-size: .85em;
 	letter-spacing: .1em;
 	text-transform: uppercase;
-}
-
-/* Media Queries*/
-@media screen and (max-width: 600px) {
-	table {
-		border: 0;
-	}
-	table caption {
-		font-size: 1.3em;
-	}
-	table thead {
-		display: none;
-	}
-	table tr {
-		border-bottom: 3px solid #ddd;
-		display: block;
-		margin-bottom: .625em;
-	}
-	table td {
-		border-bottom: 1px solid #ddd;
-		display: block;
-		font-size: .8em;
-		text-align: right;
-	}
-	table td:before {
-		content: attr(data-label);
-		float: left;
-		font-weight: bold;
-		text-transform: uppercase;
-	}
-	table td:last-child {
-		border-bottom: 0;
-	}
 }

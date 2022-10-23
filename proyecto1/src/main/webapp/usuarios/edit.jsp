@@ -36,7 +36,7 @@
 				<span
 				class="fontawesome-lock"></span><input type="password" value="<%= usuario.getPassword() %>" name="password" placeholder="contraseña"> 
 				
-				type="submit" value="Editar" title="Editar Piloto"> <br>
+				<input type="submit" value="Editar" title="Editar Piloto"> <br>
 				</form>
 		</div>
 

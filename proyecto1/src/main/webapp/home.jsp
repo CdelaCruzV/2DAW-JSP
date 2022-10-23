@@ -23,7 +23,7 @@
 		</div>
 
 		<div id="izquierda">
-		<img src="./resources/img/f1e.jpg" style="width:100%">
+		<img src="./resources/img/f1home.jpg" style="width:100%">
 		</div>
 		
 		<div id="despedida">
